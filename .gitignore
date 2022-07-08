@@ -1,0 +1,8 @@
+.vs
+*.rmod
+obj
+bin
+AssetBundle/Library/
+AssetBundle/Logs/
+AssetBundle/Temp/
+AssetBundle/ProjectSettings/*.asset

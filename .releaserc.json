@@ -1,0 +1,53 @@
+{
+  "branches": [
+    "+([0-9])?(.{+([0-9]),x}).x",
+    "main",
+    "next",
+    {
+      "name": "beta",
+      "prerelease": true
+    },
+    {
+      "name": "alpha",
+      "prerelease": true
+    }
+  ],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogTitle": "# No Trading Post Music Changelog",
+        "changelogFile": "CHANGELOG.md"
+      }
+    ],
+    [
+      "@semantic-release/github",
+      {
+        "assets": [
+          {
+            "path": "NoTradingPostMusic.rmod",
+            "name": "NoTradingPostMusic-${nextRelease.gitTag}.rmod",
+            "label": "NoTradingPostMusic-${nextRelease.gitTag}.rmod"
+          }
+        ]
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "message": "chore(release): ${nextRelease.version} as ${branch.channel} [skip ci]\n\n${nextRelease.notes}",
+        "assets": [
+          "CHANGELOG.md"
+        ]
+      }
+    ],
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "./scripts/release.sh \"${nextRelease.version}\""
+      }
+    ]
+  ]
+}

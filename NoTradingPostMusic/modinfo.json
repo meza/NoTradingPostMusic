@@ -1,0 +1,14 @@
+{
+  "name": "NoTradingPostMusic",
+  "author": "meza",
+  "description": "Disables the music at the trading posts.",
+  "version": "VERSION",
+  "license": "GPL-3.0",
+  "icon": "icon.png",
+  "banner": "banner.png",
+  "gameVersion": "1.0",
+  "requiredByAllPlayers": false,
+  "updateUrl": "https://www.raftmodding.com/api/v1/mods/no-trading-post-music/version.txt",
+  "isModPermanent": false,
+  "excludedFiles": []
+}
